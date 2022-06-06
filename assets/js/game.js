@@ -20,6 +20,9 @@ for (var i=0; i < enemyNames.length; i++){
     console.log(enemyNames[i] + " is at " + i + " index");
 }
 
+for ( var i = 0; i < enemyNames.length; i++) {
+    fight(enemyNames[i]);
+}
 // creat function fight
 var fight = function(){
     // alert players that they are starting the round
