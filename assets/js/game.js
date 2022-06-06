@@ -7,9 +7,18 @@ var playerMoney = 10;
 console.log(playerName, playerAttack, playerHealth);
 
 
-var enemyName = "Roborto";
+// var enemyName = "Roborto"; Replacing with an array to allow for multiple robots
+var enemyNames = ["Roborto", "Amy Andriod", "Robo Trumble"];
 var enemyHealth = 50;
 var enemyAttack = 12; 
+
+console.log(enemyNames);
+
+for (var i=0; i < enemyNames.length; i++){
+    console.log(enemyNames[i]);
+    console.log(i);
+    console.log(enemyNames[i] + " is at " + i + " index");
+}
 
 // creat function fight
 var fight = function(){
@@ -23,20 +32,20 @@ var fight = function(){
         // remove enemy's heath by subtracting the amount set in the playerAttack variable
         enemyHealth = enemyHealth - playerAttack;
         console.log( 
-            playerName + " attacked " + enemyName + ". " + enemyName + " now has " + enemyHealth + " health remaining."
+            playerName + " attacked " + enemyNames + ". " + enemyNames + " now has " + enemyHealth + " health remaining."
          );
         
         //  check enemys health 
         if (enemyHealth <= 0) {
-           window.alert(enemyName + " has died!");
+           window.alert(enemyNames + " has died!");
          } else {
-            window.alert(enemyName + " still has " + enemyHealth + " health left.")
+            window.alert(enemyNames + " still has " + enemyHealth + " health left.")
          }
 
           // remove player's health by subtracting the amount set in the enemyAttack variable
         playerHealth = playerHealth - enemyAttack;
         console.log(
-            enemyName + " attacked " + playerName + ". " + playerName + " now has " + playerHealth + " health remaining."
+            enemyNames + " attacked " + playerName + ". " + playerName + " now has " + playerHealth + " health remaining."
         );
 
         // check player's health
@@ -68,4 +77,4 @@ var fight = function(){
 
 
 // execute function fight
-fight();
+// fight();
