@@ -14,17 +14,36 @@ var enemyAttack = 12;
 
 console.log(enemyNames);
 
-for (var i=0; i < enemyNames.length; i++){
-    console.log(enemyNames[i]);
-    console.log(i);
-    console.log(enemyNames[i] + " is at " + i + " index");
-}
+// for (var i=0; i < enemyNames.length; i++){
+//     console.log(enemyNames[i]);
+//     console.log(i);
+//     console.log(enemyNames[i] + " is at " + i + " index");
+// }
+// Function to start a new game 
+var startGame = function() {
+// reset the player stats
+playerHealth = 100; 
+playerAttack = 10;
+playerMoney = 10;
 
-for ( var i = 0; i < enemyNames.length; i++) {
-    var pickedEnemyName = enemyNames[i];
-    enemyHealth = 50;
-    fight(pickedEnemyName);
-}
+  for (var i = 0; i < enemyNames.length; i++) {
+    if (playerHealth > 0) {
+      window.alert("Welcome to Robot Gladiators! Round " + (i + 1));
+
+      var pickedEnemyName = enemyNames[i];
+      enemyHealth = 50;
+      fight(pickedEnemyName);
+    }
+    else {
+      window.alert("You have lost your robot in battle! Game Over!");
+      break;
+    }
+  }
+  // play again
+  startGame();
+};
+  
+
 // creat function fight
 var fight = function(enemyName) {
     while (playerHealth > 0 && enemyHealth > 0) {
@@ -100,3 +119,6 @@ var fight = function(enemyName) {
       }
     } // end of while loop
   }; // end of fight function
+
+  // Start the game when the page loads
+  startGame();
